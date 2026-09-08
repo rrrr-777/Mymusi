@@ -44,7 +44,7 @@ async def start(_, message: types.Message):
 
     key = buttons.start_key(message.lang, private)
     await message.reply_video(
-        photo=config.START_IMG,
+        video=config.START_IMG,
         caption=_text,
         reply_markup=key,
         quote=not private,
