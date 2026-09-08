@@ -65,7 +65,7 @@
     "loop_set": "Loop count set to: {0}",
     "loop_off": "Loop disabled.",
     "loop_usage": "<b>Usage:</b>\n\n<code>/loop [count]</code>\n<code>/loop off</code>",
-    "not_playing": "The bot isn't streaming in the video chat.",
+    "not_playing": "𝐓𝐡𝐞 𝐛𝐨𝐭 𝐢𝐬𝐧'𝐭 𝐬𝐭𝐫𝐞𝐚𝐦𝐢𝐧𝐠 𝐢𝐧 𝐭𝐡𝐞 𝐯𝐢𝐝𝐞𝐨 𝐜𝐡𝐚𝐭.",
     "pinging": "Pinging… please wait…",
     "ping_pong": "<u><b>🏓 ᴩᴏɴɢ :</b></u>\n\n<b>ᴩʏ :</b> <code>{0}ms</code>\n\n<b>ᴜᴩᴛɪᴍᴇ :</b> {1}\n<b>ᴄᴩᴜ :</b> <code>{2}%</code>\n<b>ʀᴀᴍ</b> <code>{3}%</code>\n<b>ᴅɪsᴋ :</b> <code>{4}%</code>\n<b>ᴩʏ-ᴛɢᴄᴀʟʟs :</b> <code>{5}ms</code>",
     "play_admin": "<u><b>Admin only play</b></u>\n\nOnly admins are allowed to play in this chat.",
