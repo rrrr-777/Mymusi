@@ -94,8 +94,8 @@ class Inline:
         if back:
             rows = [
                 [
-                    self.ikb(text=_lang["𝐁𝐚𝐜𝐤"], callback_data="help back"),
-                    self.ikb(text=_lang["𝐜𝐚𝐧𝐜𝐞𝐥"], callback_data="help close"),
+                    self.ikb(text=_lang["back"], callback_data="help back"),
+                    self.ikb(text=_lang["cancel"], callback_data="help close"),
                 ]
             ]
         else:
