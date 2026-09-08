@@ -17,8 +17,8 @@ from pyrogram import errors
 from KartikMusic import db, logger
 
 lang_codes = {
-    "en": "English",
-    "my": "မြန်မာဘာသာ",
+    "en": "𝐄𝐧𝐠𝐥𝐢𝐬𝐡",
+    "my": "မြန်မာ🇲🇲",
     
 }
 
