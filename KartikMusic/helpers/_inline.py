@@ -73,7 +73,8 @@ class Inline:
                 keyboard.append(
                     [
                         self.ikb(text="𝐀𝐮𝐭𝐨 𝐏𝐥𝐚𝐲", callback_data=f"controls more {chat_id}"),
-                    ]  
+                    ]
+               )
                 keyboard.append(
                     [
                         self.ikb(
