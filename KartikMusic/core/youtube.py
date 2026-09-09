@@ -20,7 +20,7 @@ from KartikMusic import logger
 from KartikMusic.helpers import Track, utils
 
 API_URL = os.environ.get("MEOW_API_URL", "https://music.yukiapi.site")
-API_KEY = os.environ.get("MEOW_API_KEY", "yuki_eb56b393d102666cdf48fcaaceb479c3") # 🔑  On Telegram
+API_KEY = os.environ.get("MEOW_API_KEY", "yuki_eb56b393d102666cdf48fcaaceb479c3") # 🔑 Get Key: @MeowApiRobot On Telegram
 
 DOWNLOAD_DIR = "downloads"
 
@@ -283,7 +283,9 @@ class YouTubeAPI:
         thumbnail = result[query_type]["thumbnails"][0]["url"].split("?")[0]
         return title, duration_min, thumbnail, vidid
 
-    async def get_related(self, video_id: str, video: bool = False, max_duration: int = 0):
+    async def get_related(
+        self, video_id: str, video: bool = False, max_duration: int = 0
+    ) -> Track | None:
         try:
             _results = await Recommendations.getRelated(video_id)
             if not isinstance(_results, dict):
@@ -291,24 +293,27 @@ class YouTubeAPI:
             results = _results.get("result")
             if results:
                 videos = [r for r in results if r.get("type") == "video"]
+                if max_duration:
+                    videos = [
+                        v
+                        for v in videos
+                        if (utils.to_seconds(v.get("duration") or "00:00") if hasattr(utils, "to_seconds") else time_to_seconds(v.get("duration") or "00:00")) <= max_duration
+                    ]
                 if not videos:
                     return None
                 data = random.choice(videos)
-                title = data.get("title")
-                duration_min = data.get("duration")
-                vidid = data.get("id")
-                yturl = data.get("link")
-                thumbnail = data.get("thumbnails")[0]["url"].split("?")[0]
-                
-                track_details = {
-                    "title": title,
-                    "link": yturl,
-                    "vidid": vidid,
-                    "duration_min": duration_min,
-                    "thumb": thumbnail,
-                    "user": "Autoplay"
-                }
-                return track_details, vidid
+                duration_str = data.get("duration") or "00:00"
+                return Track(
+                    id=data.get("id"),
+                    channel_name=data.get("channel", {}).get("name", ""),
+                    duration=duration_str,
+                    duration_sec=utils.to_seconds(duration_str) if hasattr(utils, "to_seconds") else time_to_seconds(duration_str),
+                    title=data.get("title", "")[:25],
+                    thumbnail=data.get("thumbnails", [{}])[-1].get("url", "").split("?")[0],
+                    url=data.get("link"),
+                    user="Autoplay",
+                    video=video,
+                )
         except Exception as e:
             logger.error(f"Error fetching related videos: {e}")
         return None
