@@ -20,7 +20,7 @@ from KartikMusic import logger
 from KartikMusic.helpers import Track, utils
 
 API_URL = os.environ.get("MEOW_API_URL", "https://music.yukiapi.site")
-API_KEY = os.environ.get("MEOW_API_KEY", "yuki_eb56b393d102666cdf48fcaaceb479c3") # 🔑 Get Key: @MeowApiRobot On Telegram
+API_KEY = os.environ.get("MEOW_API_KEY", "yuki_eb56b393d102666cdf48fcaaceb479c3") # 🔑  On Telegram
 
 DOWNLOAD_DIR = "downloads"
 
@@ -125,7 +125,6 @@ class YouTubeAPI:
                         return entity.url
         return None
 
-    # ------------------ Play Handler အတွက် Search Function ------------------
     async def search(self, query: str, m_id: int = None, video: bool = False) -> Track | None:
         try:
             results = VideosSearch(query, limit=1)
@@ -148,7 +147,6 @@ class YouTubeAPI:
         except Exception as e:
             logger.error(f"Error in YouTube search: {e}")
         return None
-    # -----------------------------------------------------------------------
 
     async def details(self, link: str, videoid: Union[bool, str] = None):
         if videoid:
@@ -285,7 +283,6 @@ class YouTubeAPI:
         thumbnail = result[query_type]["thumbnails"][0]["url"].split("?")[0]
         return title, duration_min, thumbnail, vidid
 
-    # ------------------ Autoplay အတွက် Method ------------------
     async def get_related(self, video_id: str, video: bool = False, max_duration: int = 0):
         try:
             _results = await Recommendations.getRelated(video_id)
@@ -315,12 +312,11 @@ class YouTubeAPI:
         except Exception as e:
             logger.error(f"Error fetching related videos: {e}")
         return None
-    # -----------------------------------------------------------
 
     async def download(
         self,
         link: str,
-        mystic,
+        mystic=None,
         video: Union[bool, str] = None,
         videoid: Union[bool, str] = None,
         songaudio: Union[bool, str] = None,
@@ -336,10 +332,10 @@ class YouTubeAPI:
             else:
                 downloaded_file = await download_song(link)
             if downloaded_file:
-                return downloaded_file, True
-            return None, False
+                return downloaded_file
+            return None
         except Exception:
-            return None, False
+            return None
 
 
 YouTube = YouTubeAPI()
