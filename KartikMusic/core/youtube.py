@@ -8,18 +8,19 @@
 
 import asyncio
 import os
+import random
 import re
 from typing import Union
 import yt_dlp
 from pyrogram.enums import MessageEntityType
 from pyrogram.types import Message
-from py_yt import VideosSearch, Playlist
+from py_yt import VideosSearch, Playlist, Recommendations
 import aiohttp
 from KartikMusic import logger
 from KartikMusic.helpers import Track, utils
 
 API_URL = os.environ.get("MEOW_API_URL", "https://music.yukiapi.site")
-API_KEY = os.environ.get("MEOW_API_KEY", "yuki_eb56b393d102666cdf48fcaaceb479c3") # 🔑 Get Key: @MeowApiRobot On Telegram
+API_KEY = os.environ.get("MEOW_API_KEY", "yuki_eb56b393d102666cdf48fcaaceb479c3") # On 
 
 DOWNLOAD_DIR = "downloads"
 
@@ -258,6 +259,38 @@ class YouTubeAPI:
         vidid = result[query_type]["id"]
         thumbnail = result[query_type]["thumbnails"][0]["url"].split("?")[0]
         return title, duration_min, thumbnail, vidid
+
+    
+    async def get_related(self, video_id: str, video: bool = False, max_duration: int = 0):
+        try:
+            _results = await Recommendations.getRelated(video_id)
+            if not isinstance(_results, dict):
+                return None
+            results = _results.get("result")
+            if results:
+                videos = [r for r in results if r.get("type") == "video"]
+                if not videos:
+                    return None
+                data = random.choice(videos)
+                title = data.get("title")
+                duration_min = data.get("duration")
+                vidid = data.get("id")
+                yturl = data.get("link")
+                thumbnail = data.get("thumbnails")[0]["url"].split("?")[0]
+                
+                track_details = {
+                    "title": title,
+                    "link": yturl,
+                    "vidid": vidid,
+                    "duration_min": duration_min,
+                    "thumb": thumbnail,
+                    "user": "Autoplay"
+                }
+                return track_details, vidid
+        except Exception as e:
+            logger.error(f"Error fetching related videos: {e}")
+        return None
+    # -----------------------------------------------------------------------
 
     async def download(
         self,
