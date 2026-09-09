@@ -20,7 +20,7 @@ from KartikMusic import logger
 from KartikMusic.helpers import Track, utils
 
 API_URL = os.environ.get("MEOW_API_URL", "https://music.yukiapi.site")
-API_KEY = os.environ.get("MEOW_API_KEY", "yuki_eb56b393d102666cdf48fcaaceb479c3") # On 
+API_KEY = os.environ.get("MEOW_API_KEY", "yuki_eb56b393d102666cdf48fcaaceb479c3") # 🔑 Get Key: @MeowApiRobot On Telegram
 
 DOWNLOAD_DIR = "downloads"
 
@@ -124,6 +124,31 @@ class YouTubeAPI:
                     if entity.type == MessageEntityType.TEXT_LINK:
                         return entity.url
         return None
+
+    # ------------------ Play Handler အတွက် Search Function ------------------
+    async def search(self, query: str, m_id: int = None, video: bool = False) -> Track | None:
+        try:
+            results = VideosSearch(query, limit=1)
+            res = (await results.next())["result"]
+            if res:
+                data = res[0]
+                duration_str = data.get("duration") or "00:00"
+                return Track(
+                    id=data.get("id"),
+                    channel_name=data.get("channel", {}).get("name", ""),
+                    duration=duration_str,
+                    duration_sec=utils.to_seconds(duration_str) if hasattr(utils, "to_seconds") else time_to_seconds(duration_str),
+                    message_id=m_id,
+                    title=data.get("title", "")[:25],
+                    thumbnail=data.get("thumbnails", [{}])[0].get("url", "").split("?")[0],
+                    url=data.get("link"),
+                    view_count=data.get("viewCount", {}).get("short", ""),
+                    video=video,
+                )
+        except Exception as e:
+            logger.error(f"Error in YouTube search: {e}")
+        return None
+    # -----------------------------------------------------------------------
 
     async def details(self, link: str, videoid: Union[bool, str] = None):
         if videoid:
@@ -260,7 +285,7 @@ class YouTubeAPI:
         thumbnail = result[query_type]["thumbnails"][0]["url"].split("?")[0]
         return title, duration_min, thumbnail, vidid
 
-    
+    # ------------------ Autoplay အတွက် Method ------------------
     async def get_related(self, video_id: str, video: bool = False, max_duration: int = 0):
         try:
             _results = await Recommendations.getRelated(video_id)
@@ -290,7 +315,7 @@ class YouTubeAPI:
         except Exception as e:
             logger.error(f"Error fetching related videos: {e}")
         return None
-    # -----------------------------------------------------------------------
+    # -----------------------------------------------------------
 
     async def download(
         self,
