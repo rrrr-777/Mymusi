@@ -56,7 +56,7 @@
     "log_fetch": "Fetching logs...",
     "log_not_found": "Log file doesn't exist.",
     "log_sent": "Log file of {0}",
-    "log_chat": "<u><b>New Chat Log</b></u>\n\n<b>Chat:</b> <code>{0}</code> | {1}\n<b>User:</b> <code>{2}</code> | {3}",
+    "log_chat": "<u><b>New Chat Log</b></u>\n\n<b>Chat:</b> <code>{0}</code> | {1}\n\n<b>User:</b> <code>{2}</code> | {3}",
     "log_user": "<u><b>New User Log</b></u>\n\n<b>ID:</b> <code>{0}</code>\n<b>Name:</b> {1} | {2}",
     "logger_on": "Logger enabled.",
     "logger_off": "Logger disabled.",
@@ -76,8 +76,8 @@
     "play_usage": "<b>𝐔𝐬𝐚𝐠𝐞:</b>\n\n<code>/play 𝐒𝐨𝐧𝐠 𝐍𝐚𝐦𝐞 & 𝐘𝐨𝐮𝐓𝐮𝐛𝐞 𝐥𝐢𝐧𝐤</code>",
     "play_seeking": "Seeking the current stream...",
     "play_again": "Replaying the current media...",
-    "play_now": "𝐏𝐥𝐚𝐲 𝐍𝐨𝐰",
-    "play_next": "𝐇𝐨𝐥𝐝 𝐨𝐧...\n𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 𝐧𝐞𝐱𝐭 𝐦𝐞𝐝𝐢𝐚 𝐟𝐫𝐨𝐦 𝐭𝐡𝐞 𝐪𝐮𝐞𝐮𝐞. 𝐁𝐚𝐛𝐲🍃",
+    "play_now": "𝐏𝐥𝐚𝐲💌𝐍𝐨𝐰",
+    "play_next": "𝐇𝐨𝐥𝐝 𝐨𝐧...💌\n𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 𝐧𝐞𝐱𝐭 𝐦𝐞𝐝𝐢𝐚 𝐟𝐫𝐨𝐦 𝐭𝐡𝐞 𝐪𝐮𝐞𝐮𝐞. 𝐁𝐚𝐛𝐲🍃",
     "play_invite": "𝐇𝐨𝐥𝐝 𝐨𝐧 𝐚 𝐦𝐨𝐦𝐞𝐧𝐭...💌\n𝐈𝐧𝐯𝐢𝐭𝐢𝐧𝐠 {0} 𝐚𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐭𝐨 𝐲𝐨𝐮𝐫 𝐜𝐡𝐚𝐭.🎁",
     "play_searching": "𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠 𝐁𝐚𝐛𝐲🦋...",
     "play_downloading": "𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 𝐒𝐨𝐧𝐠 𝐁𝐚𝐛𝐲🍁...",
@@ -97,7 +97,7 @@
     "autoplay_on": "<b>𝐀𝐮𝐭𝐨𝐩𝐥𝐚𝐲 𝐞𝐧𝐚𝐛𝐥𝐞𝐝 𝐛𝐲</b> {0}\n\n𝐅𝐫𝐨𝐦 𝐧𝐨𝐰 𝐨𝐧, 𝐭𝐡𝐞 𝐛𝐨𝐭 𝐰𝐢𝐥𝐥 𝐚𝐮𝐭𝐨𝐦𝐚𝐭𝐢𝐜𝐚𝐥𝐥𝐲 𝐩𝐥𝐚𝐲 𝐫𝐞𝐥𝐚𝐭𝐞𝐝 𝐦𝐮𝐬𝐢𝐜 𝐨𝐧𝐜𝐞 𝐭𝐡𝐞 𝐪𝐮𝐞𝐮𝐞 𝐢𝐬 𝐞𝐦𝐩𝐭𝐲",
     "autoplay_off": "<b>𝐀𝐮𝐭𝐨𝐩𝐥𝐚𝐲 𝐝𝐢𝐬𝐚𝐛𝐥𝐞𝐝 𝐛𝐲</b> {0}",
     "autoplay_next": "𝐀𝐮𝐭𝐨𝐩𝐥𝐚𝐲 𝐢𝐬 𝐨𝐧. 𝐇𝐨𝐥𝐝 𝐨𝐧...\n\n𝐅𝐞𝐭𝐜𝐡𝐢𝐧𝐠 𝐚𝐧𝐝 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 𝐚 𝐫𝐞𝐥𝐚𝐭𝐞𝐝 𝐭𝐫𝐚𝐜𝐤🎧.",
-    "autoplay_skip": "<b>Stream skipped by {0}</b>\n\nAutoplay is on. Fetching a related track, please wait...",
+    "autoplay_skip": "<b>𝐒𝐭𝐫𝐞𝐚𝐦 𝐬𝐤𝐢𝐩𝐩𝐞𝐝 𝐛𝐲 {0}</b>\n\n 💌𝐀𝐮𝐭𝐨𝐩𝐥𝐚𝐲 𝐢𝐬 𝐨𝐧. 𝐅𝐞𝐭𝐜𝐡𝐢𝐧𝐠 𝐚 𝐫𝐞𝐥𝐚𝐭𝐞𝐝 𝐭𝐫𝐚𝐜𝐤, 𝐩𝐥𝐞𝐚𝐬𝐞 𝐰𝐚𝐢𝐭....",
     "vclog_on": "<b>VC Logger enabled by</b> {0}",
     "vclog_off": "<b>VC Logger disabled by</b> {0}",
     "vclog_usage": "<b>Usage:</b>\n\n<code>/{0} [on|off]</code>",
@@ -117,7 +117,7 @@
     "queue_fetching": "Fetching queue...",
     "restarting": "Restarting...",
     "restarted": "Restart in progress. Don't worry, it'll only take a few seconds… maybe.",
-    "start_pm": "<blockquote>◍ ʜєʏ :- {0} 🍃</blockquote>\n\n<blockquote expandable>💮 ʏᴏᴜ ᴀʀᴇ ᴜsɪɴɢ {1} ᴛʜᴇ ᴜʟᴛɪᴍᴀᴛᴇ ᴅᴇsᴛɪɴᴀᴛɪᴏɴ ғᴏʀ ʜɪɢʜ-ǫᴜᴀʟɪᴛʏ sᴛʀᴇᴀᴍɪɴɢ.\n\n● ʙᴜɪʟᴅ : ᴠ5.𝟶 sᴛᴀʙʟᴇ.\n● ᴏᴜᴛᴘᴜᴛ :ʜɪ-ʀᴇs ᴀᴜᴅɪᴏ\n● ʟᴀᴛᴇɴᴄʏ :ᴢᴇʀᴏ ᴅᴇʟᴀʏ\n\n🎋 ᴄʟɪᴄᴋ ʜᴇʟᴘ ᴛᴏ sᴇᴇ ᴀʟʟ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs.</blockquote>",
+    "start_pm": "<blockquote>◍ ʜєʏ :- {0} 🍃</blockquote>\n\n<blockquote expandable>💌 ʏᴏᴜ ᴀʀᴇ ᴜsɪɴɢ {1} ᴛʜᴇ ᴜʟᴛɪᴍᴀᴛᴇ ᴅᴇsᴛɪɴᴀᴛɪᴏɴ ғᴏʀ ʜɪɢʜ-ǫᴜᴀʟɪᴛʏ sᴛʀᴇᴀᴍɪɴɢ.\n\n● ʙᴜɪʟᴅ : ᴠ5.𝟶 sᴛᴀʙʟᴇ.\n● ᴏᴜᴛᴘᴜᴛ :ʜɪ-ʀᴇs ᴀᴜᴅɪᴏ\n● ʟᴀᴛᴇɴᴄʏ :ᴢᴇʀᴏ ᴅᴇʟᴀʏ\n\n🎋 ᴄʟɪᴄᴋ ʜᴇʟᴘ ᴛᴏ sᴇᴇ ᴀʟʟ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs.</blockquote>",
     "start_gp": "<blockquote expandable>◍ ʜєʏ,\n𝐓𝐡𝐢𝐬 𝐢𝐬 {0}\n\n<u><b>A ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴀᴡᴇsᴏᴍᴇ ᴀɴᴅ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.</b></u></blockquote>",
     "start_settings": "<u><b>{0} 𝐬𝐞𝐭𝐭𝐢𝐧𝐠𝐬</b></u>\n\n𝐂𝐥𝐢𝐜𝐤 𝐭𝐡𝐞 𝐛𝐮𝐭𝐭𝐨𝐧𝐬 𝐛𝐞𝐥𝐨𝐰 𝐭𝐨 𝐜𝐡𝐚𝐧𝐠𝐞 𝐭𝐡𝐢𝐬 𝐜𝐡𝐚𝐭'𝐬 𝐜𝐮𝐫𝐫𝐞𝐧𝐭 𝐬𝐞𝐭𝐭𝐢𝐧𝐠𝐬.",
     "stats_fetching": "Fetching stats...",
@@ -174,4 +174,4 @@
     "help_10": "VC Logger",
     "help_11": "𝐀𝐮𝐭𝐨𝐩𝐥𝐚𝐲",
     "help_thumb": "<u><b>Thumbnail commands:</b></u>\n\n/nothumb [enable|disable]: Toggles the thumbnail off/on for the chat."
-, "queue_finished": "🎵𝐓ʜᴇ 𝐐ᴜᴇᴜᴇ 𝐇ᴀs 𝐅ɪɴɪsʜᴇᴅ. 𝐔sᴇ /play 𝐓ᴏ 𝐀ᴅᴅ 𝐌ᴏʀᴇ 𝐒ᴏɴɢs.⚡️"}
+, "queue_finished": "🎵သီချင်းစာရင်း(𝐐ᴜᴇᴜᴇ) ပြီးဆုံးသွားပါပြီ။ သီချင်းများ ထပ်မံထည့်သွင်းရန် /play ကို အသုံးပြုပါ။⚡️"}
